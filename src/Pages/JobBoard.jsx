@@ -7,6 +7,7 @@ export const JobBoard = () => {
   const [items, setItems] = React.useState ([])
   const [isLoading, setIsLoading] = React.useState (false)
   const [currentItems, setCurrentItems] = React.useState ([])
+  const itemsPerPage = 2
 
   React.useEffect(() => {
     setIsLoading(true)
@@ -18,12 +19,10 @@ export const JobBoard = () => {
       })
       .then((data) => {
         setItems(data)
-        setCurrentItems(data)
+        setCurrentItems(data.slice(0, itemsPerPage))
       })
     setIsLoading(false)
   },[])
-
-  console.log(currentItems)
 
   const item = {
     "id":"635ee6d304601d61a71951f6",
@@ -43,13 +42,13 @@ export const JobBoard = () => {
 }
 
   return (
-    <div className='items '>
+    <div className='items'>
       {
         currentItems.map((obj) => {
           return <JobListItem key={obj.id} obj={obj}/>
         })
       }
-      <Pagination items={items} itemsPerPage={5} currentItems={currentItems} setCurrentItems={setCurrentItems} />
+      <Pagination items={items} itemsPerPage={itemsPerPage} currentItems={currentItems} setCurrentItems={setCurrentItems} />
       </div>
   )
 }

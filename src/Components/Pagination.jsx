@@ -22,25 +22,21 @@ export const Pagination = ({ itemsPerPage, items, currentItems, setCurrentItems 
     const [itemOffset, setItemOffset] = React.useState(0);
   
     const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-    // setCurrentItems(items.slice(itemOffset, endOffset));
     const pageCount = Math.ceil(items.length / itemsPerPage);
   
     const handlePageClick = (event) => {
       const newOffset = (event.selected * itemsPerPage) % items.length;
-      console.log(
-        `User requested page number ${event.selected}, which is offset ${newOffset}`
-      );
+      setCurrentItems(items.slice(newOffset, newOffset + itemsPerPage));
       setItemOffset(newOffset);
     };
   
     return (
       <>
-        <ReactPaginate
-          breakLabel="..."
+        <ReactPaginate className='flex'
+          breakLabel = "..."
           nextLabel="next >"
           onPageChange={handlePageClick}
-          pageRangeDisplayed={5}
+          pageRangeDisplayed={3}
           pageCount={pageCount}
           previousLabel="< previous"
           renderOnZeroPageCount={null}
