@@ -5,5 +5,20 @@
 @layer base {
     html {
         font-family: Proxima Nova, system-ui, sans-serif;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
+  }
+
+  .headline1 {
+    @apply text-[28px] font-bold leading-[34px] text-[#3A4562] tracking-[0.41px]
+  }
+
+  .headline2 {
+    @apply font-bold text-[20px] text-[#3A4562] leading-[25px] tracking-[-0.63px]
+  }
+
+  .text_job_detail {
+    @apply font-[roboto] text-[18px] leading-6 tracking-[-0.56px] text-[#3A4562]
   }

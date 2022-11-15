@@ -42,7 +42,7 @@ export const JobBoard = () => {
 }
 
   return (
-    <div className='items'>
+    <div className='items mx-[260px] py-[29px]'>
       {
         currentItems.map((obj) => {
           return <JobListItem key={obj.id} obj={obj}/>
