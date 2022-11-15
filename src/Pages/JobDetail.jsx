@@ -45,6 +45,16 @@ export const JobDetail = () => {
                         <p>{item.description.substring(0, item.description.indexOf("Responsopilities"))}</p>
                         <p className='mt-[30px] mb-[15px] headline2'>Responsopilities</p>
                         <p className='text_job_detail'>{item.description.substring(item.description.indexOf("Responsopilities"), item.description.indexOf("Compensation")).replace("Responsopilities:", "")}</p>
+                        <p className='mt-[30px] mb-[15px] headline2'>Compensation & Benefits:</p>
+                        <p className='text_job_detail'>Our physicians enjoy a wide range of benefits, including:</p>
+                        <ul>
+                            {item.description.substring(item.description.indexOf("Compensation & Benefits:")).replace("Compensation & Benefits:", "").split(".").map((item) => {
+                                return <li>{item}</li>
+                            })}
+                        </ul>
+                        <p className='text_job_detail'>{item.description.substring(item.description.indexOf("Compensation & Benefits:")).replace("Compensation & Benefits:", "")}</p>
+                        
+
                     </div>
                 </div>
             </div>
