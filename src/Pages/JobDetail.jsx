@@ -16,7 +16,7 @@ export const JobDetail = () => {
         "createdAt":"2012-05-04T01:38:26.141Z",
         "updatedAt":"2012-05-05T01:38:26.141Z",
         "description":"\n  Reprehenderit Lorem consectetur non et minim adipisicing deserunt. Ipsum reprehenderit do pariatur proident esse sint magna ullamco qui minim. Anim Lorem ut laborum occaecat culpa consectetur reprehenderit aliquip ex cupidatat proident quis laborum. Nulla aute ipsum et anim.\n  \n  Responsopilities:\n    Ex qui consequat deserunt laborum cupidatat ut ullamco veniam minim nisi incididunt aliquip incididunt. Sunt sunt ullamco elit ipsum ea enim consectetur sit magna minim ea cupidatat. Et ut proident voluptate quis nulla anim commodo in pariatur ad.\n  \nCompensation & Benefits:\n\t    Incididunt et sint incididunt laboris duis. Deserunt consectetur sint aute et sint aliqua quis nostrud non elit aliqua elit tempor. Aliquip ad dolore proident eu consequat elit amet laborum aute excepteur sit labore.\n\n",
-        "employment_type":["Full time"]}
+        "employment_type":["Full time", "Part", "Else"]}
 
     return (
         <div className='flex bg-white pt-[56px] rounded-lg'>
@@ -48,14 +48,38 @@ export const JobDetail = () => {
                         <p className='mt-[30px] mb-[15px] headline2'>Compensation & Benefits:</p>
                         <p className='text_job_detail'>Our physicians enjoy a wide range of benefits, including:</p>
                         <ul>
-                            {item.description.substring(item.description.indexOf("Compensation & Benefits:")).replace("Compensation & Benefits:", "").split(".").map((item) => {
-                                return <li>{item}</li>
+                            {item.description.substring(item.description.indexOf("Compensation & Benefits:")).replace("Compensation & Benefits:", "").split(".").slice(0, -1).map((item, i) => {
+                                return <li key={i} className='relative before:absolute before:top-[10px] before:left-[-20px] before:opacity-[0.632594] before:bg-[#384564] before:w-[9px] before:h-[9px]'>{item}</li>
                             })}
                         </ul>
-                        <p className='text_job_detail'>{item.description.substring(item.description.indexOf("Compensation & Benefits:")).replace("Compensation & Benefits:", "")}</p>
-                        
-
                     </div>
+                    <button className='w-[127px] h-[52px] rounded-lg bg-[#384564] mt-[39px] mb-[86px] text-white text-xs font-semibold mb-8'>APPLY NOW</button>
+                    <div className='headline1'>Additional info</div>
+                    <div className='h-px w-full bg-[#3A4562] opacity-[0.13] mt-[9px] mb-[15px]'></div>
+                    <div className='text_job_detail mb-[15px]'>Employment type</div>
+                    <div className='flex'>
+                        {item.employment_type.map((item, i) => {
+                                return <div key={i} className='flex justify-center items-center w-[222px] h-[49px] employment_types'>{item}</div>
+                            })}
+                    </div>
+                    <div className='text_job_detail mt-[23px] mb-[10px]'>Benefits</div>
+                    <div className='flex'>
+                        {item.benefits.map((item, i) => {
+                                return <div key={i} className='flex justify-center items-center w-[220px] h-[50px] benefits_types'>{item}</div>
+                            })}
+                    </div>
+                    <div className='headline1 mt-[87px]'>Attached images</div>
+                    <div className='h-px w-full bg-[#3A4562] opacity-[0.13] mt-[9px] mb-[15px]'></div>
+                    <div classname="flex">
+                        {item.pictures.map((item, i) => {
+                                return <div key="i" classname="w-[250px]">
+                                            <img src={item} alt="attached items" className='w-[200px] h-[116px] mr-[9px]'></img>
+                                        </div>
+                                
+                            })}
+                    </div>
+            
+                    
                 </div>
             </div>
             <div className='job_contacts w-[402px] border-[1px] mr-[315px] bg-black'>
