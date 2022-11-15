@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const JobDetail = () => {
+export const JobDetail = ({ today, getTimePassed }) => {
 
     const item = {
         "id":"635ee6d304601d61a71951f6",
@@ -18,9 +18,10 @@ export const JobDetail = () => {
         "description":"\n  Reprehenderit Lorem consectetur non et minim adipisicing deserunt. Ipsum reprehenderit do pariatur proident esse sint magna ullamco qui minim. Anim Lorem ut laborum occaecat culpa consectetur reprehenderit aliquip ex cupidatat proident quis laborum. Nulla aute ipsum et anim.\n  \n  Responsopilities:\n    Ex qui consequat deserunt laborum cupidatat ut ullamco veniam minim nisi incididunt aliquip incididunt. Sunt sunt ullamco elit ipsum ea enim consectetur sit magna minim ea cupidatat. Et ut proident voluptate quis nulla anim commodo in pariatur ad.\n  \nCompensation & Benefits:\n\t    Incididunt et sint incididunt laboris duis. Deserunt consectetur sint aute et sint aliqua quis nostrud non elit aliqua elit tempor. Aliquip ad dolore proident eu consequat elit amet laborum aute excepteur sit labore.\n\n",
         "employment_type":["Full time", "Part", "Else"]}
 
+        
     return (
         <div className='flex bg-white pt-[56px] rounded-lg'>
-            <div className='job_details flex justify-between ml-[347px] mr-[54px] mb-[9px]'>
+            <div className='job_details flex justify-between ml-[347px] mr-[131px] mb-[9px]'>
                 <div className=''>
                     <header className='job_details_header flex items-center justify-between'>
                         <div className='headline1'>Job Details</div>
@@ -40,7 +41,7 @@ export const JobDetail = () => {
                             <div className='text_job_detail'>Brutto, per year</div>
                         </div>
                     </div>
-                    <div className='my-[7px] font-[roboto] text-[18px] leading-[24px] tracking-[-0.56px] text-[#38415D] opacity-[0.355988]'>Posted 2 days ago</div>
+                    <div className='my-[7px] font-[roboto] text-[18px] leading-[24px] tracking-[-0.56px] text-[#38415D] opacity-[0.355988]'>Posted {getTimePassed(item.createdAt)} ago</div>
                     <div className='font-[roboto] text-[18px] leading-[24px] tracking-[-0.56px] text-[#3A4562]'>
                         <p>{item.description.substring(0, item.description.indexOf("Responsopilities"))}</p>
                         <p className='mt-[30px] mb-[15px] headline2'>Responsopilities</p>
@@ -58,33 +59,36 @@ export const JobDetail = () => {
                     <div className='h-px w-full bg-[#3A4562] opacity-[0.13] mt-[9px] mb-[15px]'></div>
                     <div className='text_job_detail mb-[15px]'>Employment type</div>
                     <div className='flex'>
-                        {item.employment_type.map((item, i) => {
-                                return <div key={i} className='flex justify-center items-center w-[222px] h-[49px] employment_types'>{item}</div>
+                        {item.employment_type.map((item) => {
+                                return <div key={item} className='flex justify-center items-center w-[222px] h-[49px] employment_types'>{item}</div>
                             })}
                     </div>
                     <div className='text_job_detail mt-[23px] mb-[10px]'>Benefits</div>
                     <div className='flex'>
-                        {item.benefits.map((item, i) => {
-                                return <div key={i} className='flex justify-center items-center w-[220px] h-[50px] benefits_types'>{item}</div>
+                        {item.benefits.map((item) => {
+                                return <div key={item} className='flex justify-center items-center w-[220px] h-[50px] benefits_types'>{item}</div>
                             })}
                     </div>
                     <div className='headline1 mt-[87px]'>Attached images</div>
                     <div className='h-px w-full bg-[#3A4562] opacity-[0.13] mt-[9px] mb-[15px]'></div>
-                    <div classname="flex">
+                    <div className="flex mb-[89px]">
                         {item.pictures.map((item, i) => {
-                                return <div key="i" classname="w-[250px]">
-                                            <img src={item} alt="attached items" className='w-[200px] h-[116px] mr-[9px]'></img>
+                                return <div key={i} className="">
+                                            <img src={item} alt="attached items" className='w-[200px] h-[116px] mr-[9px] rounded-lg'></img>
                                         </div>
                                 
                             })}
                     </div>
-            
-                    
+                    <button className='flex items-center w-[213px] h-[50px] rounded-lg mt-[89px] ml-[-89px] bg-[#e4e5ea]'>
+                        <span className='ml-[23px] mr-[19px]'><img src="/icons/arrow.png" width={10} height={18} alt="arrow" /></span>
+                        <span className='font-semibold text-xs text-[#3A4562] mr-[26px]'>RETURN TO JOB BOARD</span>
+                    </button>
                 </div>
             </div>
-            <div className='job_contacts w-[402px] border-[1px] mr-[315px] bg-black'>
+            <div className='job_contacts w-[402px] h-[436px] border-[1px] mr-[315px] bg-black'>
                 JobContact
             </div>
+            
         </div>
         
 )

@@ -1,7 +1,8 @@
 import React from 'react'
 
-export const JobListItem = ({ obj }) => {
-  return (
+export const JobListItem = ({ obj, today, getTimePassed }) => {
+
+    return (
     <div className='item max-w-[1400px] h-[164px] bg-white flex flex-row justify-between items-center rounded-lg mb-2 px-4 py-6 shadow-[2px 1px 7px rgba(0, 0, 0, 0.08), 0px 2px 1px -1px rgba(0, 0, 0, 0.04), 0px 1px 3px rgba(0, 0, 0, 0.12)]'>
           <div className='item_content flex'>
             <div className='item_content_logo w-[85px] h-[85px] mr-[26px] overflow-hidden rounded-full'><img src={obj.pictures[0]} width={85} alt="logo" /></div>
@@ -36,7 +37,7 @@ export const JobListItem = ({ obj }) => {
             <div className='item_extra_img absolute top-0 right-0'>
               <img src="/icons/rectangle31.png" alt="" />
             </div>
-            <div className='item_extra_txt absolute bottom-0 left-0 text-base text-[#878D9D] font-normal tracking-[0.23619px]'>Posted 2 days ago</div>
+            <div className='item_extra_txt absolute bottom-0 left-0 text-base text-[#878D9D] font-normal tracking-[0.23619px]'>Posted {getTimePassed(obj.createdAt)} ago</div>
           </div>
         </div>
   )
