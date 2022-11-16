@@ -21,7 +21,7 @@ export const JobDetail = ({ today, getTimePassed }) => {
         
     return (
         <div className='flex bg-white pt-[56px] rounded-lg'>
-            <div className='job_details flex justify-between ml-[347px] mr-[131px] mb-[9px]'>
+            <div className='job_details flex justify-between max-w-[723px] ml-[347px] mr-[131px] mb-[9px]'>
                 <div className=''>
                     <header className='job_details_header flex items-center justify-between'>
                         <div className='headline1'>Job Details</div>
@@ -85,8 +85,17 @@ export const JobDetail = ({ today, getTimePassed }) => {
                     </button>
                 </div>
             </div>
-            <div className='job_contacts w-[402px] h-[436px] border-[1px] mr-[315px] bg-black'>
-                JobContact
+            <div className='job_contacts flex-0 w-[402px] h-[436px] border-[1px] mr-[315px] rounded-lg'>
+                <div className='relative overflow-hidden headline2 bg-[#2A3047] px-[63px] pt-[31px]'>
+                    {/* <div className='absolute w-[273px] h-[273px] rounded-full bg-[#202336] left-[-22%] top-[-50%] z-10'></div> */}
+                    <div className='text-white z-50'>Department name.</div>
+                    <div className='text-white'>University Hospital Giessen.</div>
+                    <div></div>
+                    
+                </div>
+                <div>
+                    MAP
+                </div>
             </div>
             
         </div>
