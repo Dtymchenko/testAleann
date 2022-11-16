@@ -19,7 +19,7 @@ export const JobListItem = ({ obj, today, getTimePassed }) => {
                     <img src="/icons/location.png" alt="location" />
                   </div>
                   <div className='item_content_text_location_txt text-base text-[#878D9D] font-normal tracking-[0.23619px]'>
-                    {/* Could be got from backend, but there is no such data there and location is some point in the Ocean */}
+                    {/* Could be got from backend, but there is no such data there and location is some point in the Ocean - returns something like 6RX9R43Q+JQ */}
                   Vienna, Austria
                   </div>
                 </div>

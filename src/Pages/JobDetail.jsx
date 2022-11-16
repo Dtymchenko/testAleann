@@ -1,6 +1,10 @@
 import React from 'react'
+import Geocode from "react-geocode";
 
 export const JobDetail = ({ today, getTimePassed }) => {
+
+    const [address, setAddress] = React.useState('')
+    let city, state, country;
 
     const item = {
         "id":"635ee6d304601d61a71951f6",
@@ -17,8 +21,48 @@ export const JobDetail = ({ today, getTimePassed }) => {
         "updatedAt":"2012-05-05T01:38:26.141Z",
         "description":"\n  Reprehenderit Lorem consectetur non et minim adipisicing deserunt. Ipsum reprehenderit do pariatur proident esse sint magna ullamco qui minim. Anim Lorem ut laborum occaecat culpa consectetur reprehenderit aliquip ex cupidatat proident quis laborum. Nulla aute ipsum et anim.\n  \n  Responsopilities:\n    Ex qui consequat deserunt laborum cupidatat ut ullamco veniam minim nisi incididunt aliquip incididunt. Sunt sunt ullamco elit ipsum ea enim consectetur sit magna minim ea cupidatat. Et ut proident voluptate quis nulla anim commodo in pariatur ad.\n  \nCompensation & Benefits:\n\t    Incididunt et sint incididunt laboris duis. Deserunt consectetur sint aute et sint aliqua quis nostrud non elit aliqua elit tempor. Aliquip ad dolore proident eu consequat elit amet laborum aute excepteur sit labore.\n\n",
         "employment_type":["Full time", "Part", "Else"]}
-
         
+        
+            let phoneMod = [...item.phone]
+            phoneMod.splice(3, 0, "(")
+            phoneMod.splice(6, 0, ")")
+            phoneMod.splice(10, 0, "-")
+            phoneMod.splice(13, 0, "-")
+            phoneMod = phoneMod.join('')
+            
+        
+        
+    // As Geocode can not return real address on location, that is received from server (something like 6RX9R43Q+JQ) - I will try to use random address from react geocode sample
+    
+        Geocode.setApiKey("AIzaSyAHTZCx4NC_KcJHgnPbGqmC-5LQk_ChVZg");
+    Geocode.setLocationType("ROOFTOP");
+    Geocode.fromLatLng(48.8583701, 2.2922926).then(
+        (response) => {
+            setAddress(response.results[0].formatted_address);
+            let city, state, country;
+
+          for (let i = 0; i < response.results[0].address_components.length; i++) {
+            for (let j = 0; j < response.results[0].address_components[i].types.length; j++) {
+              switch (response.results[0].address_components[i].types[j]) {
+                case "locality":
+                  city = response.results[0].address_components[i].long_name;
+                  break;
+                case "administrative_area_level_1":
+                  state = response.results[0].address_components[i].long_name;
+                  break;
+                case "country":
+                  country = response.results[0].address_components[i].long_name;
+                  break;
+              }
+            }
+          }
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+    
+
     return (
         <div className='flex bg-white pt-[56px] rounded-lg'>
             <div className='job_details flex justify-between max-w-[723px] ml-[347px] mr-[131px] mb-[9px]'>
@@ -85,12 +129,20 @@ export const JobDetail = ({ today, getTimePassed }) => {
                     </button>
                 </div>
             </div>
-            <div className='job_contacts flex-0 w-[402px] h-[436px] border-[1px] mr-[315px] rounded-lg'>
-                <div className='relative overflow-hidden headline2 bg-[#2A3047] px-[63px] pt-[31px]'>
+            <div className='job_contacts flex-0 w-[402px] h-[436px] border-[1px] mr-[315px] rounded-lg overflow-hidden'>
+                <div className='h-1/2 relative overflow-hidden headline2 bg-[#2A3047] px-[63px] pt-[31px] pb-[15px]'>
                     {/* <div className='absolute w-[273px] h-[273px] rounded-full bg-[#202336] left-[-22%] top-[-50%] z-10'></div> */}
                     <div className='text-white z-50'>Department name.</div>
                     <div className='text-white'>University Hospital Giessen.</div>
-                    <div></div>
+                    <div className='flex text_job_detail mb-[7px]'>
+                        <span className='mr-[8px]'><img src='/icons/location.png' alt='location' width={13} height={18}></img></span>
+                        <span className='text-[#E8EBF3]'>{address}</span>
+                    </div>
+                    <div className='text_job_detail text-[#E8EBF3]'>
+                        <p className='text-[#E8EBF3]'>{phoneMod}</p>
+                        <p className='text-[#E8EBF3]'>{item.email}</p>
+                    </div>
+                    <p></p>
                     
                 </div>
                 <div>
