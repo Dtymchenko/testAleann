@@ -32,13 +32,14 @@ export const Pagination = ({ itemsPerPage, items, currentItems, setCurrentItems 
   
     return (
       <>
-        <ReactPaginate className='flex'
+        <ReactPaginate className='flex pagination'
           breakLabel = "..."
-          nextLabel="next >"
+          nextLabel=">"
           onPageChange={handlePageClick}
-          pageRangeDisplayed={3}
+          pageRangeDisplayed={2}
+          marginPagesDisplayed={2}
           pageCount={pageCount}
-          previousLabel="< previous"
+          previousLabel="<"
           renderOnZeroPageCount={null}
         />
       </>

@@ -1,10 +1,12 @@
 import React from 'react'
 import Geocode from "react-geocode";
+import MapBlock from '../Components/MapBlock';
+
 
 export const JobDetail = ({ today, getTimePassed }) => {
 
     const [address, setAddress] = React.useState('')
-    let city, state, country;
+    
 
     const item = {
         "id":"635ee6d304601d61a71951f6",
@@ -145,9 +147,7 @@ export const JobDetail = ({ today, getTimePassed }) => {
                     <p></p>
                     
                 </div>
-                <div>
-                    MAP
-                </div>
+                <MapBlock />
             </div>
             
         </div>
