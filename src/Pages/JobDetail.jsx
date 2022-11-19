@@ -1,7 +1,7 @@
 import React from 'react'
 import Geocode from "react-geocode";
 import MapBlock from '../Components/MapBlock';
-
+import { Link } from 'react-router-dom';
 
 export const JobDetail = ({ today, getTimePassed }) => {
 
@@ -125,10 +125,14 @@ export const JobDetail = ({ today, getTimePassed }) => {
                                 
                             })}
                     </div>
-                    <button className='flex items-center w-[213px] h-[50px] rounded-lg mt-[89px] ml-[-89px] bg-[#e4e5ea]'>
-                        <span className='ml-[23px] mr-[19px]'><img src="/icons/arrow.png" width={10} height={18} alt="arrow" /></span>
-                        <span className='font-semibold text-xs text-[#3A4562] mr-[26px]'>RETURN TO JOB BOARD</span>
+                    <Link to='/'>
+                        <button className='flex items-center w-[213px] h-[50px] rounded-lg mt-[89px] ml-[-89px] bg-[#e4e5ea]'>
+                        
+                            <span className='ml-[23px] mr-[19px]'><img src="/icons/arrow.png" width={10} height={18} alt="arrow" /></span>
+                            <span className='font-semibold text-xs text-[#3A4562] mr-[26px]'>RETURN TO JOB BOARD</span>
+                        
                     </button>
+                    </Link>
                 </div>
             </div>
             <div className='job_contacts flex-0 w-[402px] h-[436px] border-[1px] mr-[315px] rounded-lg overflow-hidden'>

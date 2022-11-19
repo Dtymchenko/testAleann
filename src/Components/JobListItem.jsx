@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export const JobListItem = ({ obj, today, getTimePassed }) => {
 
@@ -8,7 +9,7 @@ export const JobListItem = ({ obj, today, getTimePassed }) => {
             <div className='item_content_logo w-[85px] h-[85px] mr-[26px] overflow-hidden rounded-full'><img src={obj.pictures[0]} width={85} alt="logo" /></div>
             <div className='item_content_text w-[950px] h-[116px]'>
               <div className='item_content_text_title h-[50px] mb-2 text-[#3A4562] font-bold text-[20px] leading-[25px] tracking-[-0.63px]'>
-                <a href='/detail'>{obj.title}</a>
+                <Link to='/detail'>{obj.title}</Link>
               </div>
               <div className='item_content_text_dept mb-2 text-base text-[#878D9D] font-normal tracking-[0.23619px]'>
                 {/* Not sure that it is correct for Department name, but did not find anything more similar */}

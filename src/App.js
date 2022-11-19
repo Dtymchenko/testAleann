@@ -1,8 +1,10 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { JobBoard } from "./Pages/JobBoard";
 import { JobDetail } from "./Pages/JobDetail";
 import Loader from "./Components/Loader";
+import { NotFound } from "./Pages/NotFound";
 
 const today = new Date();
 
@@ -34,7 +36,6 @@ function App() {
 
   React.useEffect(() => {
     setIsLoading(true);
-    console.log(isLoading);
     fetch(
       "https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu"
     )
@@ -48,25 +49,36 @@ function App() {
         setCurrentItems(data.slice(0, itemsPerPage));
       });
     setIsLoading(false);
-    console.log(isLoading);
   }, []);
-
-  console.log(isLoading);
 
   const tempArr = [...new Array(itemsPerPage)];
 
   return (
     <div className="App max-w-[1920px] bg-[#E6E9F2]">
-      {isLoading && tempArr.map((item, i) => <Loader key="i" />)}
-      <JobBoard
-        items={items}
-        currentItems={currentItems}
-        getTimePassed={getTimePassed}
-        today={today}
-        itemsPerPage={itemsPerPage}
-        setCurrentItems={setCurrentItems}
-      />
-      {/* <JobDetail getTimePassed={getTimePassed} today={today} /> */}
+      <Routes>
+        <Route
+          index
+          element={
+            isLoading ? (
+              tempArr.map((item, i) => <Loader key={i} />)
+            ) : (
+              <JobBoard
+                items={items}
+                currentItems={currentItems}
+                getTimePassed={getTimePassed}
+                today={today}
+                itemsPerPage={itemsPerPage}
+                setCurrentItems={setCurrentItems}
+              />
+            )
+          }
+        />
+        <Route
+          path="/detail"
+          element={<JobDetail getTimePassed={getTimePassed} today={today} />}
+        />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
