@@ -30,6 +30,7 @@ function App() {
   };
 
   const [items, setItems] = React.useState([]);
+  const [itemId, setItemId] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(true);
   const [currentItems, setCurrentItems] = React.useState([]);
   const itemsPerPage = 2;
@@ -69,13 +70,21 @@ function App() {
                 today={today}
                 itemsPerPage={itemsPerPage}
                 setCurrentItems={setCurrentItems}
+                setItemId={setItemId}
               />
             )
           }
         />
         <Route
           path="/detail"
-          element={<JobDetail getTimePassed={getTimePassed} today={today} />}
+          element={
+            <JobDetail
+              getTimePassed={getTimePassed}
+              today={today}
+              items={items}
+              itemId={itemId}
+            />
+          }
         />
         <Route path="*" element={<NotFound />} />
       </Routes>

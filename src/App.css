@@ -222,23 +222,23 @@ ul.pagination li a.active {
         width: 270px;
     }
     .item_extra {
-        /* width: 125px;
+        width: 125px;
         height: 17px;
         position: absolute;
-        top: 2;
-        right: 0; */
-        display: none;
+        top: 0;
+        right: 0;
+        /* display: none; */
     }
     .item_extra img {
         display: none;
     }
     .item_rate {
-        /* width: 54px;
+        width: 54px;
         height: 10px;
         position: absolute;
-        top: 2;
-        left: 0; */
-        display: none;
+        top: 0;
+        left: 0;
+        /* display: none; */
     }
     .job_details {
         display: block;
