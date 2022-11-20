@@ -196,6 +196,8 @@ ul.pagination li a.active {
         background: #EFF0F5;
         padding: 5px;
         width: 80%;
+        width: 345px;
+        overflow: hidden;
 }
     .item_content_logo {
         width: 60px;
@@ -211,15 +213,13 @@ ul.pagination li a.active {
         padding: 5px;
     }
     .item_content_text_title {
-        max-width: 200px;
         font-weight: 400;
         font-size: 18px;
         line-height: 24px;
         letter-spacing: -0.5625px;
     }
     .item_content_text {
-        max-width: 200px;
-        width: 220px;
+        width: 270px;
     }
     .item_extra {
         /* width: 125px;
@@ -239,6 +239,72 @@ ul.pagination li a.active {
         top: 2;
         left: 0; */
         display: none;
+    }
+    .job_details {
+        display: block;
+        width: 340px;
+    }
+    .title_block {
+        display: block;
+        width: 87%;
+    }
+    .title_block h1 {
+        display: block;
+        width: 100%;
+    }
+    .job_detail_wrapper {
+        display: block;
+        padding-top: 24px;
+    }
+    .job_contacts {
+        width: 340px;
+        margin: 20px auto;
+        border: none;
+    }
+    .job_contacts_title {
+        display: block;
+        margin: 10px;
+    }
+    .job_contacts_title_divider {
+        display: block;
+        width: 95%;
+        height: 1px;
+        margin: 10px;
+    }
+    .job_details_header {
+        display: block;
+    }
+    .job_details_header_wrapper {
+        width: 100%;
+    }
+    .job_details {
+        margin: 0 auto;
+    }
+    .job_detail_header_divider {
+        display: none;
+    }
+    .job_detail_upper_button {
+        display: none;
+    }
+    .job_detail_lower_item_adaptive {
+        margin: 30px auto;
+    }
+    .job_detail_images_descr {
+        margin-top: 20px;
+    }
+    .job_detail_images {
+        display: block;
+        margin: 0 auto 20px;
+    }
+    .job_detail_images div {
+        width: fit-content;
+        margin: 10px auto;
+    }
+    .button_back {
+        display: none;
+    }
+    .salary_block {
+        width: 100px;
     }
 }
 @media (min-width: 414px) and (max-width: 766px) {
@@ -302,6 +368,72 @@ ul.pagination li a.active {
     .pagination {
         width: 100%;
     }
+    .job_details {
+        display: block;
+        width: 340px;
+    }
+    .title_block {
+        display: block;
+        width: 87%;
+    }
+    .title_block h1 {
+        display: block;
+        width: 100%;
+    }
+    .job_detail_wrapper {
+        display: block;
+        padding-top: 24px;
+    }
+    .job_contacts {
+        width: 340px;
+        margin: 20px auto;
+        border: none;
+    }
+    .job_contacts_title {
+        display: block;
+        margin: 10px;
+    }
+    .job_contacts_title_divider {
+        display: block;
+        width: 95%;
+        height: 1px;
+        margin: 10px;
+    }
+    .job_details_header {
+        display: block;
+    }
+    .job_details_header_wrapper {
+        width: 100%;
+    }
+    .job_details {
+        margin: 0 auto;
+    }
+    .job_detail_header_divider {
+        display: none;
+    }
+    .job_detail_upper_button {
+        display: none;
+    }
+    .job_detail_lower_item_adaptive {
+        margin: 30px auto;
+    }
+    .job_detail_images_descr {
+        margin-top: 20px;
+    }
+    .job_detail_images {
+        display: block;
+        margin: 0 auto 20px;
+    }
+    .job_detail_images div {
+        width: fit-content;
+        margin: 10px auto;
+    }
+    .button_back {
+        display: none;
+    }
+    .salary_block {
+        width: 100px;
+    }
 }
 @media (min-width: 767px) and (max-width: 1023px) {
     .items {
@@ -313,15 +445,29 @@ ul.pagination li a.active {
     .item_extra {
         min-width: 80px;
     }
+    .job_detail_wrapper {
+        display: block;
+    }
+    .job_contacts {
+        margin: 20px auto;
+    }
     .job_details_header_wrapper {
         width: 700px;
     }
     .job_details {
-        margin-left: 5px;
-        margin-right: 5px;
+        margin: 0 auto;
     }
-    .job_contacts {
-        display: none;
+    .job_detail_header_divider {
+        margin-bottom: 15px;
+    }
+    .job_detail_lower_button {
+        margin-bottom: 30px;
+    }
+    .job_detail_images_descr {
+        margin-top: 20px;
+    }
+    .job_detail_images {
+        margin-bottom: 20px;
     }
     .button_back {
         margin: 0;
@@ -381,8 +527,12 @@ ul.pagination li a.active {
     }
     .job_details {
         margin-left: 100px;
-    }
-    .job_contacts {
         margin-right: 100px;
     }
+    .job_contacts {
+        margin-right: 50px;
+    }
+    /* .button_back {
+        margin: 0;
+    } */
 }

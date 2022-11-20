@@ -71,6 +71,9 @@ export const JobDetail = ({ today, getTimePassed }) => {
                 <div className='job_details_header_wrapper'>
                     <header className='job_details_header flex items-center justify-between'>
                         <div className='headline1'>Job Details</div>
+                        <div className='job_details_divider'>
+                            <div className='h-px w-full bg-[#3A4562] opacity-[0.13] mt-[9px] mb-[15px]'></div>
+                        </div>
                         <div className='flex items-center mb-[11px] text_job_detail'>
                             <img className='w-[16px] h-[20px] mr-4' src="/icons/rectangle31.png" alt="rectangle" />
                             <p className='mr-[31px]'>Save to my list</p>
@@ -78,8 +81,8 @@ export const JobDetail = ({ today, getTimePassed }) => {
                             <p>Share</p>
                         </div>
                     </header>
-                    <div className='h-px w-full bg-[#3A4562] opacity-[0.13] mb-[39px]'></div>
-                    <button className='w-[127px] h-[52px] rounded-lg bg-[#384564] text-white text-xs font-semibold mb-8'>APPLY NOW</button>
+                    <div className='job_detail_header_divider h-px w-full bg-[#3A4562] opacity-[0.13] mb-[39px]'></div>
+                    <button className='job_detail_upper_button w-[127px] h-[52px] rounded-lg bg-[#384564] text-white text-xs font-semibold mb-8'>APPLY NOW</button>
                     <div className='title_block flex justify-between items-baseline'>
                         <h1 className='w-[501px] text-[24px] font-bold leading-[30px] text-[#3A4562] tracking-[-0.75px]'>{item.title}</h1>
                         <div className='salary_block'>
@@ -100,7 +103,10 @@ export const JobDetail = ({ today, getTimePassed }) => {
                             })}
                         </ul>
                     </div>
-                    <button className='w-[127px] h-[52px] rounded-lg bg-[#384564] mt-[39px] mb-[86px] text-white text-xs font-semibold mb-8'>APPLY NOW</button>
+                    <div className='job_detail_lower_item_adaptive w-[127px] h-[52px] rounded-lg bg-[#384564] mt-[39px] mb-[86px] text-white text-xs font-semibold mb-8'>
+                    <button className='job_detail_lower_button w-[127px] h-[52px]'>APPLY NOW</button>
+                    </div>
+                    
                     <div className='headline1'>Additional info</div>
                     <div className='h-px w-full bg-[#3A4562] opacity-[0.13] mt-[9px] mb-[15px]'></div>
                     <div className='text_job_detail mb-[15px]'>Employment type</div>
@@ -115,9 +121,9 @@ export const JobDetail = ({ today, getTimePassed }) => {
                                 return <div key={item} className='flex justify-center items-center w-[220px] h-[50px] benefits_types'>{item}</div>
                             })}
                     </div>
-                    <div className='headline1 mt-[87px]'>Attached images</div>
+                    <div className='job_detail_images_descr headline1 mt-[87px]'>Attached images</div>
                     <div className='h-px w-full bg-[#3A4562] opacity-[0.13] mt-[9px] mb-[15px]'></div>
-                    <div className="flex mb-[89px]">
+                    <div className="job_detail_images flex mb-[89px]">
                         {item.pictures.map((item, i) => {
                                 return <div key={i} className="">
                                             <img src={item} alt="attached items" className='w-[200px] h-[116px] mr-[9px] rounded-lg'></img>
@@ -135,7 +141,10 @@ export const JobDetail = ({ today, getTimePassed }) => {
                     </Link>
                 </div>
             </div>
+            <div className='job_contacts_title headline1 text-center hidden'>Contacts</div>
+                    <div className='job_contacts_title_divider h-px w-full bg-[#3A4562] opacity-[0.13] hidden '></div>
             <div className='job_contacts flex-0 w-[402px] h-[436px] border-[1px] mr-[315px] rounded-lg overflow-hidden'>
+                    
                 <div className='h-1/2 relative overflow-hidden headline2 bg-[#2A3047] px-[63px] pt-[31px] pb-[15px]'>
                     {/* <div className='absolute w-[273px] h-[273px] rounded-full bg-[#202336] left-[-22%] top-[-50%] z-10'></div> */}
                     <div className='text-white z-50'>Department name.</div>
