@@ -66,9 +66,9 @@ export const JobDetail = ({ today, getTimePassed }) => {
     
 
     return (
-        <div className='flex bg-white pt-[56px] rounded-lg'>
+        <div className='job_detail_wrapper flex bg-white pt-[56px] rounded-lg'>
             <div className='job_details flex justify-between max-w-[723px] ml-[347px] mr-[131px] mb-[9px]'>
-                <div className=''>
+                <div className='job_details_header_wrapper'>
                     <header className='job_details_header flex items-center justify-between'>
                         <div className='headline1'>Job Details</div>
                         <div className='flex items-center mb-[11px] text_job_detail'>
@@ -80,14 +80,14 @@ export const JobDetail = ({ today, getTimePassed }) => {
                     </header>
                     <div className='h-px w-full bg-[#3A4562] opacity-[0.13] mb-[39px]'></div>
                     <button className='w-[127px] h-[52px] rounded-lg bg-[#384564] text-white text-xs font-semibold mb-8'>APPLY NOW</button>
-                    <div className='flex justify-between items-baseline'>
+                    <div className='title_block flex justify-between items-baseline'>
                         <h1 className='w-[501px] text-[24px] font-bold leading-[30px] text-[#3A4562] tracking-[-0.75px]'>{item.title}</h1>
                         <div className='salary_block'>
                             <div className='headline2'>€ {item.salary.replace(/k/g, ' 000')}</div>
                             <div className='text_job_detail'>Brutto, per year</div>
                         </div>
                     </div>
-                    <div className='my-[7px] font-[roboto] text-[18px] leading-[24px] tracking-[-0.56px] text-[#38415D] opacity-[0.355988]'>Posted {getTimePassed(item.createdAt)} ago</div>
+                    <div className='detail_descr my-[7px] font-[roboto] text-[18px] leading-[24px] tracking-[-0.56px] text-[#38415D] opacity-[0.355988]'>Posted {getTimePassed(item.createdAt)} ago</div>
                     <div className='font-[roboto] text-[18px] leading-[24px] tracking-[-0.56px] text-[#3A4562]'>
                         <p>{item.description.substring(0, item.description.indexOf("Responsopilities"))}</p>
                         <p className='mt-[30px] mb-[15px] headline2'>Responsopilities</p>
@@ -126,7 +126,7 @@ export const JobDetail = ({ today, getTimePassed }) => {
                             })}
                     </div>
                     <Link to='/'>
-                        <button className='flex items-center w-[213px] h-[50px] rounded-lg mt-[89px] ml-[-89px] bg-[#e4e5ea]'>
+                        <button className='button_back flex items-center w-[213px] h-[50px] rounded-lg mt-[89px] ml-[-89px] bg-[#e4e5ea]'>
                         
                             <span className='ml-[23px] mr-[19px]'><img src="/icons/arrow.png" width={10} height={18} alt="arrow" /></span>
                             <span className='font-semibold text-xs text-[#3A4562] mr-[26px]'>RETURN TO JOB BOARD</span>

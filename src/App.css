@@ -183,24 +183,206 @@ ul.pagination li a.active {
 
 }
 
-@media (min-width: 360px) and (max-width: 390px) {
+@media (min-width: 360px) and (max-width: 413px) {
+    .App {
+        background: rgba(230, 233, 242, 1);
+}
+    .items {
+        background: rgba(230, 233, 242, 1);
+        padding: 9px;
+        margin: 0 auto;
+}
+    .item {
+        background: #EFF0F5;
+        padding: 5px;
+        width: 80%;
+}
+    .item_content_logo {
+        width: 60px;
+        height: 60px;
+        margin-right: 5px;
+    }
+    .item_content_logo img {
+        width: 60px;
+        height: 60px;
+    }
+    .items {
+        margin: 0;
+        padding: 5px;
+    }
+    .item_content_text_title {
+        max-width: 200px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.5625px;
+    }
+    .item_content_text {
+        max-width: 200px;
+        width: 220px;
+    }
+    .item_extra {
+        /* width: 125px;
+        height: 17px;
+        position: absolute;
+        top: 2;
+        right: 0; */
+        display: none;
+    }
+    .item_extra img {
+        display: none;
+    }
+    .item_rate {
+        /* width: 54px;
+        height: 10px;
+        position: absolute;
+        top: 2;
+        left: 0; */
+        display: none;
+    }
+}
+@media (min-width: 414px) and (max-width: 766px) {
+    .App {
+        background: rgba(230, 233, 242, 1);
+}
+    .items {
+        background: rgba(230, 233, 242, 1);
+        padding: 9px;
+        margin: 0 auto;
+}
+    .item {
+        background: #EFF0F5;
+        padding: 5px;
+}
+    .item_content_logo {
+        width: 66px;
+        height: 66px;
+        margin-right: 16px;
+        margin-left: 16px;
+    }
+    .item_content_logo img {
+        width: 66px;
+        height: 66px;
+    }
+    .items {
+        margin: 0;
+        padding: 5px;
+    }
 
+    .item_content_text_title {
+        /* max-width: 67%; */
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.5625px;
+    }
+    .item_content_text {
+        max-width: 70%;
+        width: 70%;
+    }
+    .item_extra {
+        /* width: 125px;
+        height: 17px;
+        position: absolute;
+        top: 2;
+        right: 0; */
+        display: none;
+    }
+    .item_extra img {
+        display: none;
+    }
+    .item_rate {
+        /* width: 54px;
+        height: 10px;
+        position: absolute;
+        top: 2;
+        left: 0; */
+        display: none;
+    }
+    .pagination {
+        width: 100%;
+    }
 }
 @media (min-width: 767px) and (max-width: 1023px) {
-    
+    .items {
+        margin: 0 10px;
+    }
+    .item_content_text {
+        width: 420px;
+    }
+    .item_extra {
+        min-width: 80px;
+    }
+    .job_details_header_wrapper {
+        width: 700px;
+    }
+    .job_details {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .job_contacts {
+        display: none;
+    }
+    .button_back {
+        margin: 0;
+    }
+    .salary_block {
+        width: 100px;
+    }
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
     .items {
-        margin: 0 px;
+        margin: 0 30px;
+    }
+    .item_content_text {
+        width: 600px;
+    }
+    .item_extra {
+        min-width: 100px;
+    }
+    .job_details_header_wrapper {
+        width: 600px;
+    }
+    .job_details {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .job_contacts {
+        margin-right: 5px;
+    }
+    .button_back {
+        margin: 0;
+    }
+    .salary_block {
+        width: 100px;
     }
 }
 @media (min-width: 1280px) and (max-width: 1535px) {
     .items {
-        margin: 0 100px;
+        margin: 0 50px;
+    }
+    .item_content_text {
+        width: 700px;
+    }
+    .job_details {
+        margin-left: 30px;
+        margin-right: 80px;
+    }
+    .job_contacts {
+        margin-right: 30px;
+    }
+    .button_back {
+        margin: 0;
     }
 }
-@media (min-width: 1536px) and (max-width: 1620px) {
+@media (min-width: 1536px) and (max-width: 1919px) {
     .items {
-        margin: 0 100px;
+        margin: 0 150px;
+    }
+    .job_details {
+        margin-left: 100px;
+    }
+    .job_contacts {
+        margin-right: 100px;
     }
 }
