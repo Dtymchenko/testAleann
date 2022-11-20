@@ -8,23 +8,7 @@ export const JobDetail = ({ today, getTimePassed, itemId, items }) => {
     const [address, setAddress] = React.useState('')
 
     const itemArr = items.filter((job) => job.id == itemId)
-    const item = itemArr[0]
-    // const item = {
-    //     "id":"635ee6d304601d61a71951f6",
-    //     "name":"Sureplex",
-    //     "email":"sureplex@gmail.bo",
-    //     "phone":"+97117307890",
-    //     "title":"Ut veniam occaecat aute adipisicing eiusmod non pariatur enim enim cupidatat nulla ipsum eiusmod.",
-    //     "salary":"60k-71k",
-    //     "address":"76 Blende Jardine Place",
-    //     "benefits":["Pay vocations","Flexible hours"],
-    //     "location":{"lat":9.804124,"long":147.139488},
-    //     "pictures":["https://picsum.photos/200/300","https://picsum.photos/200/300","https://picsum.photos/200/300"],
-    //     "createdAt":"2012-05-04T01:38:26.141Z",
-    //     "updatedAt":"2012-05-05T01:38:26.141Z",
-    //     "description":"\n  Reprehenderit Lorem consectetur non et minim adipisicing deserunt. Ipsum reprehenderit do pariatur proident esse sint magna ullamco qui minim. Anim Lorem ut laborum occaecat culpa consectetur reprehenderit aliquip ex cupidatat proident quis laborum. Nulla aute ipsum et anim.\n  \n  Responsopilities:\n    Ex qui consequat deserunt laborum cupidatat ut ullamco veniam minim nisi incididunt aliquip incididunt. Sunt sunt ullamco elit ipsum ea enim consectetur sit magna minim ea cupidatat. Et ut proident voluptate quis nulla anim commodo in pariatur ad.\n  \nCompensation & Benefits:\n\t    Incididunt et sint incididunt laboris duis. Deserunt consectetur sint aute et sint aliqua quis nostrud non elit aliqua elit tempor. Aliquip ad dolore proident eu consequat elit amet laborum aute excepteur sit labore.\n\n",
-    //     "employment_type":["Full time", "Part", "Else"]}
-        
+    const item = itemArr[0]        
         
             let phoneMod = [...item.phone]
             phoneMod.splice(3, 0, "(")
@@ -84,12 +68,14 @@ export const JobDetail = ({ today, getTimePassed, itemId, items }) => {
                     </header>
                     <div className='job_detail_header_divider h-px w-full bg-[#3A4562] opacity-[0.13] mb-[39px]'></div>
                     <button className='job_detail_upper_button w-[127px] h-[52px] rounded-lg bg-[#384564] text-white text-xs font-semibold mb-8'>APPLY NOW</button>
+                    <div className='salary_and_descr_block'>
                     <div className='title_block flex justify-between items-baseline'>
                         <h1 className='w-[501px] text-[24px] font-bold leading-[30px] text-[#3A4562] tracking-[-0.75px]'>{item.title}</h1>
                         <div className='salary_block'>
                             <div className='headline2'>€ {item.salary.replace(/k/g, ' 000')}</div>
                             <div className='text_job_detail'>Brutto, per year</div>
                         </div>
+                    </div>
                     </div>
                     <div className='detail_descr my-[7px] font-[roboto] text-[18px] leading-[24px] tracking-[-0.56px] text-[#38415D] opacity-[0.355988]'>Posted {getTimePassed(item.createdAt)} ago</div>
                     <div className='font-[roboto] text-[18px] leading-[24px] tracking-[-0.56px] text-[#3A4562]'>
